@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-# Interface comum para classes de personagens
+
 class Personagem(ABC):
     @abstractmethod
     def habilidade(self):
@@ -10,13 +10,14 @@ class Personagem(ABC):
     def equipamento(self):
         pass
 
-# Classes de personagens concretas
+
 class Guerreiro(Personagem):
     def habilidade(self):
         return {"ataque": "Corpo a corpo", "defesa": "Bloqueio"}
 
     def equipamento(self):
         return "Espada e armadura"
+
 
 class Mago(Personagem):
     def habilidade(self):
@@ -25,6 +26,7 @@ class Mago(Personagem):
     def equipamento(self):
         return "Cajado e robe"
 
+
 class Arqueiro(Personagem):
     def habilidade(self):
         return {"ataque": "Ataque à distância", "defesa": "Esquiva"}
@@ -32,12 +34,14 @@ class Arqueiro(Personagem):
     def equipamento(self):
         return "Arco e flechas"
 
+
 class Clerigo(Personagem):
     def habilidade(self):
-        return {"ataque": "Poder de velocidade", "defesa":"Poder de cura"}
+        return {"ataque": "Poder de velocidade", "defesa": "Poder de cura"}
 
     def equipamento(self):
         return "Capa protetora"
+
 
 class Bardo(Personagem):
     def habilidade(self):
