@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 
 
-# Componente base - Milkshake
-class Milkshake(ABC):  # esse eh o component, é uma classe abstrata
+# componente base - Milkshake
+class Milkshake(ABC):  # classe abstrata
     @abstractmethod
     def preco(self) -> float:
         pass
@@ -12,8 +12,8 @@ class Milkshake(ABC):  # esse eh o component, é uma classe abstrata
         pass
 
 
-# Sabores base de Milkshake
-class MilkshakeChocolate(Milkshake):  # como se fosse o concrete component
+# sabores base de Milkshake
+class MilkshakeChocolate(Milkshake):
     def preco(self) -> float:
         return 7.0
 

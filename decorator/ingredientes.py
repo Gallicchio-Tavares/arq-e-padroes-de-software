@@ -1,7 +1,7 @@
 from milkshake import Milkshake
 
 
-# Decorator para ingredientes adicionais
+# decorator para ingredientes adicionais
 class IngredienteDecorator(Milkshake):
     def __init__(self, milkshake: Milkshake) -> None:
         self._milkshake = milkshake
@@ -13,7 +13,7 @@ class IngredienteDecorator(Milkshake):
         pass
 
 
-# Ingredientes concretos
+# ingredientes concretos
 class Biscoito(IngredienteDecorator):
     def preco(self) -> float:
         return 5.0
