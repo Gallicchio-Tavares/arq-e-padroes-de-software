@@ -1,5 +1,6 @@
 from milkshake import Milkshake
 
+
 # Decorator para ingredientes adicionais
 class IngredienteDecorator(Milkshake):
     def __init__(self, milkshake: Milkshake) -> None:
@@ -11,38 +12,43 @@ class IngredienteDecorator(Milkshake):
     def descricao(self) -> str:
         pass
 
+
 # Ingredientes concretos
 class Biscoito(IngredienteDecorator):
     def preco(self) -> float:
-        return self._milkshake.preco() + 5.0
+        return 5.0
 
     def descricao(self) -> str:
-        return self._milkshake.descricao() + ", pedaços de Oreo"
+        return "pedaços de Oreo"
+
 
 class Banana(IngredienteDecorator):
     def preco(self) -> float:
-        return self._milkshake.preco() + 2.0
+        return 2.0
 
     def descricao(self) -> str:
-        return self._milkshake.descricao() + ", rodelas de banana"
+        return "rodelas de banana"
+
 
 class Chantilly(IngredienteDecorator):
     def preco(self) -> float:
-        return self._milkshake.preco() + 3.0
+        return 3.0
 
     def descricao(self) -> str:
-        return self._milkshake.descricao() + ", chantilly"
+        return "chantilly"
+
 
 class Ouro(IngredienteDecorator):
     def preco(self) -> float:
-        return self._milkshake.preco() + 1000.0
+        return + 1000.0
 
     def descricao(self) -> str:
-        return self._milkshake.descricao() + ", folhas de ouro"
+        return "folhas de ouro"
+
 
 class Trufa(IngredienteDecorator):
     def preco(self) -> float:
-        return self._milkshake.preco() + 430.0
+        return + 430.0
 
     def descricao(self) -> str:
-        return self._milkshake.descricao() + ", trufa branca"
+        return "trufa branca"
