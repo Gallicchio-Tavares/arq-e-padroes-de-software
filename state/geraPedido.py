@@ -1,6 +1,7 @@
 import time
 from state import Aguardando
 
+
 class CentralDePedidos:
     def __init__(self):
         self.estado = None
@@ -32,12 +33,11 @@ class CentralDePedidos:
                 resposta = int(input())
                 if resposta in metodos_pagamento:
                     print(f"Opção de pagamento com \033[35m{metodos_pagamento[resposta]}\033[m selecionada\n")
-                    a = False  #pra sair do loop
+                    a = False  # pra sair do loop
                 else:
                     print("Por favor insira uma opção válida.\n")
-            except ValueError: # pessoa não digita um int
+            except ValueError:  # pessoa não digita um int
                 print("Por favor insira uma opção válida.\n")
-
 
         self.set_estado(Aguardando(self))
         time.sleep(1)
