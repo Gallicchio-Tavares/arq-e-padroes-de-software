@@ -1,6 +1,15 @@
 from tarefa import TarefaSimples, TarefaComposta
 
 
+def imprimir_subtarefas(tarefa, nivel=0):
+    if isinstance(tarefa, TarefaComposta):
+        print(f"{' ' * nivel}Tarefa Composta: {tarefa.nome}")
+        for subtarefa in tarefa.subtarefas:
+            imprimir_subtarefas(subtarefa, nivel + 1)
+    elif isinstance(tarefa, TarefaSimples):
+        print(f"{' ' * nivel}Tarefa Simples: {tarefa.nome}")
+
+
 def main():
     # Criando as tarefas
     tarefa1 = TarefaSimples("Varrer chão")
@@ -51,6 +60,10 @@ def main():
     tarefa5.marcar_concluida()
     tarefa6.marcar_concluida()
 
+    print("\nTarefas:")
+    for tarefa in [tarefa_composta4]:
+        imprimir_subtarefas(tarefa)
+
     # Testando a conclusão de uma tarefa composta
     print("Estado das tarefas:")
     print(f"{tarefa1.nome}: Concluída? {tarefa1.esta_concluida()}")
@@ -67,6 +80,14 @@ def main():
     # Marcando uma tarefa composta como concluída
     print(f"\nMarcando a tarefa {tarefa_composta2.nome} como concluída...")
     tarefa_composta2.marcar_concluida()
+
+    # desfazendo conclusões e removendo tarefas:
+    tarefa5.desfazer_conclusao()
+    tarefa_composta2.remover_subtarefa(tarefa1)
+
+    print("\nEstado da tarefa Limpar Quarto:")  # removeu varrer chão
+    for tarefa in [tarefa_composta2]:
+        imprimir_subtarefas(tarefa)
 
     print("\nEstado das tarefas após marcar a tarefa composta 1 como concluída:")
     print(f"{tarefa1.nome}: Concluída? {tarefa1.esta_concluida()}")
