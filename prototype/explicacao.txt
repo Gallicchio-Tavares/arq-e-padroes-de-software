@@ -1,0 +1,6 @@
+Para criar inimigos em qualquer quantidade com facilidade, primeiro é preciso definir uma classe base (ex: Enemy) que possui o método clone(). 
+É este método que permite a clonagem do objeto que queremos criar em q=grande quantidade.
+
+Em seguida, são criadas as subclasses (ex: Bruxo, Orc e Esqueleto) qie herdam da classe Enemy. Com isso, podemos instanciar cada tipo de inimigo 
+(serão os protótipos) e adicion-a-los a uma lista, tendo a possibilidade de criar novos inimigos clonando os protótipos já existentes com as mesmas 
+características mas que podem ser modificados conforme necessário
